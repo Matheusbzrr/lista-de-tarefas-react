@@ -1,4 +1,4 @@
-import { ClipboardCheck, ChevronRightIcon, Trash2 } from "lucide-react";
+import { Squircle, CheckCheck, ChevronRightIcon, Trash2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
@@ -21,7 +21,8 @@ function Tasks({ tasks, onTaskClick, onDeleteTaskClick }) {
               task.isCompleted && "line-through"
             }`}
           >
-            {task.isCompleted ? <ClipboardCheck /> : null}
+            {!task.isCompleted ? <Squircle /> : <CheckCheck />}
+
             {task.title}
           </button>
           <Button onClick={() => onSeeDetailsClick(task)}>
